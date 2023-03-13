@@ -66,7 +66,7 @@ header > title {
 
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   border-bottom: var(--standard-border);
   border-top: var(--standard-border);
   line-height: 2;
@@ -80,9 +80,11 @@ nav > a {
   text-decoration: none;
   padding: 0 0.8rem;
   border-bottom: none;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 
-nav > a:hover {
+nav > a:hover,
+nav > a.active {
   color: var(--bg);
   background: var(--text);
 }
