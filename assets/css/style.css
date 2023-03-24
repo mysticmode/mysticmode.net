@@ -1,7 +1,9 @@
 :root {
   --text: #444;
   --accent-text: #000;
-  --bg: #fafafa;
+  --bg: #f7ede0;
+  --bleed: #c55555;
+  --sky: #5591c5;
   --accent-bg: #efefef;
   --input-bg: white;
   --warning: #ffeeaa;
@@ -14,6 +16,7 @@
   --content-margin: 1.5rem auto;
   --bigger-content-margin: 2.5rem auto;
   --standard-border: 3px solid var(--text);
+  --alternate-border: 3px solid #e1d0c2;
 }
 
 * {
@@ -25,7 +28,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
 }
 
 body {
@@ -48,45 +50,42 @@ a:hover {
   background: var(--text);
 }
 
+.bleed {
+  background-color: var(--bleed) !important;
+}
+
+.sky {
+  background-color: var(--sky) !important;
+}
+
 header,
-main {
+.about,
+.home,
+footer {
   display: block;
   max-width: 39rem;
   margin: 1rem auto;
   padding: 0 1rem;
-  text-align: center;
 }
 
-header > title {
+header > .legend-title {
   display: block;
   font-size: 2rem;
   text-decoration: none;
-  cursor: default;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  border-bottom: var(--standard-border);
-  border-top: var(--standard-border);
-  line-height: 2;
-  margin: var(--content-margin);
-  padding: 0 2rem;
-}
-
-nav > a {
-  font-size: 1.25rem;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 0 0.8rem;
+  margin: 2rem 0;
+  text-align: center;
   border-bottom: none;
-  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 
-nav > a:hover,
-nav > a.active {
-  color: var(--bg);
-  background: var(--text);
+header > .legend-title:hover {
+  background: none;
+  color: inherit;
+}
+
+.about {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: var(--alternate-border);
 }
 
 .banner {
@@ -94,37 +93,89 @@ nav > a.active {
   width: 100%;
 }
 
-main {
-  text-align: left;
+footer {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 3rem;
 }
 
-main.home {
+main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: flex-start;
+  text-align: left;
+  max-width: 39rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  margin-bottom: 3rem !important;
+  padding-bottom: 3rem !important;
+  border-bottom: var(--alternate-border);
 }
 
 main.home > a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   color: var(--text);
-  margin: 2rem 0;
-  padding: 0 0.2rem;
+  margin: 3rem 0;
   text-decoration-thickness: 0.15rem;
-  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  border-bottom: none;
+}
+
+main.home a:last-child {
+  margin-bottom: 0;
 }
 
 main.home > a:hover {
-  color: var(--input-bg);
+  color: inherit;
+  background-color: inherit;
 }
 
-main.home > a > span {
-  position: absolute;
-  display: block;
-  margin-top: -3.5rem;
-  margin-left: -0.2rem;
+main.home > a > div {
+  display: flex;
+}
+
+main.home > a > div > span {
   font-size: 1rem;
   color: var(--bg);
   background: var(--text);
+  margin-right: 0.5rem;
   padding: 0 0.2rem;
   border-bottom: none;
+}
+
+main.home > a > div > span:last-child {
+  margin-right: 0;
+}
+
+main.home > a > p {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-bottom: var(--standard-border);
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+}
+
+main.home > a:hover > p {
+  color: var(--bg);
+  background: var(--text);
+}
+
+main.post > .title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+main.post > .date {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.content > p:last-child {
+  margin-bottom: 0;
+}
+
+.embed {
+  margin: 1rem 0 0;
 }
