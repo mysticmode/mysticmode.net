@@ -59,6 +59,7 @@ a:hover {
 }
 
 header,
+.post,
 .about,
 .home,
 footer {
@@ -178,4 +179,16 @@ main.post > .date {
 
 .embed {
   margin: 1rem 0 0;
+}
+
+@media only screen and (max-width: 600px) {
+  header,
+  main,
+  .about,
+  .post,
+  .home,
+  iframe,
+  footer {
+    max-width: 100%;
+  }
 }
